@@ -1,3 +1,5 @@
 from django.contrib import admin
+from appREST.models import Product, Payment
 
-# Register your models here.
+admin.site.register(Product)
+admin.site.register(Payment)
