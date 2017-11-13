@@ -137,3 +137,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+.idea/vcs.xml
+.idea/workspace.xml
+venvREST/
