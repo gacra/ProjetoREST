@@ -19,7 +19,7 @@ Windowns 10 Pro 64 bits
 Execução
 ---------
 
-Na pasta "ProjetoREST":
+Na pasta do projeto:
 python manage.py runserver
 
 ----
@@ -31,13 +31,13 @@ Uso
 * POST: http://127.0.0.1:8000/payment/
 Exemplo do body:
 
-{
-    "payment_date": "2017-11-14",
-    "payment_type": "BL",
-    "product": 1,
-    "product_price": "59.90",
-    "discount": "30.00",
-    "transaction_id": 1
+{  
+    "payment_date": "2017-11-14",  
+    "payment_type": "BL",  
+    "product": 1,  
+    "product_price": "59.90",  
+    "discount": "30.00",  
+    "transaction_id": 1  
 }
 
 Em que:
@@ -49,7 +49,7 @@ Em que:
 - discount: Desconto (não deve ser superior a 50%)
 - transaction_id: ID da transação (deve ser único)
 
-Obs1: O campo price é calculado automaticamente
+Obs1: O campo price é calculado automaticamente  
 Obs2: Caso o body do POST não esteja correto é retornado um código de erro HTTP 400 (Bad Request) e um JSON com os erros cometidos
 Obs3: Para fins de teste foi implementado também um GET para a rota /payment
 
@@ -69,7 +69,7 @@ Acessar as rotas /plans e /payment por meio de um navegador
 Arquivos relevantes do projeto Django
 --------------------------------------
 
-appRest/models.py
-appRest/serializers.py
-appRest/urls.py
-appRest/views.py
+appRest/models.py  
+appRest/serializers.py  
+appRest/urls.py  
+appRest/views.py  
