@@ -1,10 +1,10 @@
-#Projeto REST
+# Projeto REST
 
 Guilherme José Acra
 
-##Pré-requisitos
+## Pré-requisitos
 
-###Linguagem
+### Linguagem
 
 [Python 3](https://www.python.org/) (versão usada: 3.6.2)
 
@@ -23,7 +23,7 @@ $ pip install djangorestframework
 
 Windowns 10 Pro 64 bits
 
-##Execução
+## Execução
 
 Execute:
 ```sh
@@ -36,15 +36,15 @@ Os dois primeiros comandos criam o banco de dados.<br>
 O segundo insere no banco os produtos padrões.<br>
 Por fim, o último inicia o servidor.
 
-##Uso
+## Uso
 
-###Segunda Etapa
+### Segunda Etapa
 
-Com o servidor rodando, basta entrar na url `http://127.0.0.1:8000/pages/` em algum navegador.
+Com o servidor rodando, basta entrar na url http://127.0.0.1:8000/pages/ em algum navegador.
 
 A primeira página mostra todos os planos disponíveis. 
 
-A página de pagamento se encontra em `http://127.0.0.1:8000/pages/new_payment/`, entretanto é possível chegar nela através da página inicial.
+A página de pagamento se encontra em http://127.0.0.1:8000/pages/new_payment/, entretanto é possível chegar nela através da página inicial.
 
 Exemplos de como as páginas deveriam ser renderizadas se encontram na pasta `Exemplos` deste projeto.
 
@@ -52,15 +52,15 @@ Ambas as páginas foram desenvolvidas para serem responsivas.
 
 O navegador usado para o desenvolvimento foi o *Google Chrome (v62.0)*, sendo onde as páginas apresentam melhor resposta. Testes também foram feitos no *Mozilla Firefox (v57.0)* e no *Microsoft Edge (v40)*. Nesses navegadores, há apenas algumas pequenas alterações de aparência, não prejudicando a usabilidade.
 
-###Primeira Etapa
+### Primeira Etapa
 
-####GET: 
+#### GET: 
 
-Usar a rota `http://127.0.0.1:8000/plans/`
+Usar a rota http://127.0.0.1:8000/plans/
 
 #### POST: 
 
-Usar a rota `http://127.0.0.1:8000/payment/`
+Usar a rota http://127.0.0.1:8000/payment/
 
 Exemplo do body:
 
@@ -90,7 +90,7 @@ Em que:
 **Obs2:** Caso o body do POST não esteja correto é retornado um código de erro HTTP 400 (Bad Request) e um JSON com os erros cometidos<br>
 **Obs3:** Para fins de teste foi implementado também um GET para a rota /payment
 
-####Extras
+#### Extras
 
 - Ambiente administrativo do Django:
 
@@ -103,7 +103,7 @@ Senha: adm12345
 
 Acessar as rotas `/plans` e `/payment` por meio de um navegador
 
-##Arquivos relevantes do projeto Django
+## Arquivos relevantes do projeto Django
 
 - Segunda Etapa:
 	- pages/templates/
