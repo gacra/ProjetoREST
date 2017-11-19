@@ -1,5 +1,7 @@
 # Projeto REST
 
+API REST feita em [Django](https://www.djangoproject.com/), com front-end para consumir tal API desenvolvido com [Bootstrap](https://getbootstrap.com/), [JQuery](https://jquery.com/) e [Knockout](http://knockoutjs.com/).
+
 Guilherme José Acra
 
 ## Pré-requisitos
@@ -95,9 +97,7 @@ Em que:
 - Ambiente administrativo do Django:
 
 Para criar um usuário administrador: `python manage.py createsuperuser`.<br>
-Após acessar no navegador: `http://127.0.0.1:8000/admin/`<br>
-Usuário: adm<br>
-Senha: adm12345
+Após acessar no navegador: http://127.0.0.1:8000/admin/
 
 -  Interface do Django REST:
 
