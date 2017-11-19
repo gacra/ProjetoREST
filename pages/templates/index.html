@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+	<!--Título da página-->
+	<header>
+		<div class="jumbotron jumbotron-fluid py-4">
+		  <div class="container mx-4">
+		    <h1 class="display-3">Produtos</h1>    
+		  </div>
+		</div>
+	</header>
+
+	<!--Corpo da página-->
+	<main>
+
+		<!--Apresentação dos produtos na forma de cartões (preenchido automaticamente pelo Knockout)-->
+		<div class="container-fluid" id="div_plans" style="display: none;">
+
+			<div class="row mb-4">
+
+				<!-- ko foreach: plans -->
+				<div class="col-lg-4 col-md-6 col-sm-6 col-12 px-2 mx-auto">
+					<div class="card my-1">
+						<h2 class="card-header text-truncate" data-bind="text: name"></h2>
+						<ul class="list-group list-group-flush">
+					    <li class="list-group-item" data-bind="text: product"></li>
+					    <li class="list-group-item">R$ <span data-bind="text: price"></span></li>
+					   	<li class="list-group-item text-truncate" data-bind="text: description" id="description"></li>
+					  </ul>
+					  <div class="card-body">
+					    <a data-bind='attr: { href: url}' class="btn">Comprar</a>
+					  </div>
+					</div> <!-- /card-->
+				</div> <!-- /div-card-->
+				<!-- /ko -->			
+
+			</div> <!-- /row-->			
+
+		</div> <!-- /container-fluid-->
+
+	</main>
+
+	<!--Script personalizado-->
+	<script src="{% static "index.js" %}"></script>
+{% endblock content %}

@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from appREST import urls
+from appREST import urls as appRest_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^', include(urls)),
+    url(r'^pages/', include('pages.urls', namespace='pages')),
+    url(r'^', include(appRest_urls)),
 ]

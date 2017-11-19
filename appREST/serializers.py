@@ -9,14 +9,20 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ('id', 'product', 'price', 'description')
+        fields = ('name', 'id', 'product', 'price', 'description')
 
 
 class PaymentSerializer(serializers.ModelSerializer):
     '''Serializer para o modelo do Pagamento'''
 
+    errors_msgs = {
+        'invalid': 'Formato inválido para data. Use o formato: AAAA-MM-DD.',
+        'required': 'Este campo é obrigatório'
+    }
+
     product_price = serializers.DecimalField(max_digits=5, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
     price = serializers.DecimalField(max_digits=5, decimal_places=2, read_only=True)
+    payment_date = serializers.DateField(error_messages=errors_msgs)
 
     class Meta:
         model = Payment
@@ -35,6 +41,7 @@ class PaymentSerializer(serializers.ModelSerializer):
             payment_date = validated_data['payment_date'],
             payment_type = validated_data['payment_type'],
             product = validated_data['product'],
+            product_price = validated_data['product_price'],
             discount = validated_data['discount'],
             transaction_id = validated_data['transaction_id']
         )

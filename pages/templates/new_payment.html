@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+	<!--Título da página-->
+	<div class="jumbotron jumbotron-fluid py-4">
+	  <div class="container mx-4">
+	    <h1 class="display-3">Novo Pagamento</h1>    
+	  </div>
+	</div>
+
+	<!--Corpo da página-->
+	<main>
+
+		<div class="container">
+
+			<!--Formulário de Novo Pagamento-->
+			<form accept-charset="utf-8" class="form-horizontal mx-auto pb-4" id="needs-validation" novalidate>
+
+				<!--Data do pagamento-->
+				<div class="form-group">
+			    <label for="payment_date">Data do Pagamento:</label>
+					<input type="date" name="payment_date" id="payment_date" class="form-control" required>
+					<div class="invalid-feedback">
+	      			<p>Entre com uma data válida.</p>
+	      	</div>
+			  </div>
+
+			  <!--Produto-->
+				<div class="form-group">
+			    <label for="product">Produto:</label>
+			    <select name="product" id="product" class="form-control">
+			    	<!-- ko foreach: plans -->
+			      <option data-bind="text: name, value: id"></option>
+			      <!-- /ko -->	
+			    </select>
+			  </div>
+
+			  <!--Valor do produto-->
+			  <div class="form-group">
+			    <label for="product_price">Valor do Produto (R$):</label>
+					<input type="number" name="product_price" id="product_price" class="form-control" min="0.01" max="1000" step="0.01" value="0.01" readonly>
+					<div class="invalid-feedback">
+	      			<p>Entre com um preço válido.</p>
+	      	</div>
+			  </div>
+
+			  <!--Desconto-->
+				<div class="form-group">
+			    <label for="discount">Desconto (%):</label>
+					<input type="number" name="discount" id="discount" class="form-control" min="0" max="50" step="1" value="0" required>
+					<div class="invalid-feedback">
+	      		<p>O disconto deve ser um número inteiro e não deve passar de 50%.</p>
+	      	</div>
+			  </div>
+
+			  <!--Valor do pagamento-->
+				<div class="form-group">
+			    <label for="price">Valor do Pagamento com Desconto (R$):</label>
+					<input type="number" name="price" id="price" class="form-control" value="0.01" readonly>
+			  </div>
+
+			  <!--Tipo do pagamento-->
+				<div class="form-check form-check-inline">
+				  <label class="form-check-label">
+				    <input class="form-check-input" type="radio" name="payment_type" id="cartao" value="CT" checked> Cartão
+				  </label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <label class="form-check-label">
+				    <input class="form-check-input" type="radio" name="payment_type" id="boleto" value="BL"> Boleto
+				  </label>
+				</div>
+
+				<!--ID da transação-->
+				<div class="form-group">
+			    <label for="transaction_id">ID da transação:</label>
+					<input type="number" name="transaction_id" id="transaction_id" class="form-control" min="0" step="1" required>
+					<div class="invalid-feedback">
+	      		<p>O ID deve ser um número inteiro e positivo.</p>
+	      	</div>
+	      	<div class="invalid-id"></div>
+			  </div>
+
+				<!--Botão (Fazer pagamento)-->
+				<button class="btn d-block">Fazer pagamento</button>
+
+				<div class="unknow_error text-danger" style="display: none;">
+				</div>
+
+			</form>
+
+		</div> <!-- /container-->
+
+		<!--Modal para confirmação do pagamento-->
+		<div class="modal t-modal animated" id="modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title">PAGAMENTO EFETUADO</h3>
+					</div>
+					<div class="modal-body text-center">
+						Agradecemos a preferência.
+					</div>
+					<div class="modal-footer mx-auto">
+						<a href="{% url 'pages:index' %}" class="badge" style="padding: 1em; font-size: 0.9em">  Voltar aos produtos  </a>
+						<a href="{% url 'pages:new_payment' %}" class="badge" style="padding: 1em; font-size: 0.9em">Fazer novo pagamento</a>
+					</div>
+				</div><!-- /.modal-content-->
+			</div><!-- /.modal-dialog-->
+		</div><!-- ./modal-->
+
+	</main>
+
+	<!--Script Personalizado e inicialização de variável-->
+	<script>
+		var plan_id = {{ plan_id }}
+	</script>
+	<script src="{% static "payment.js" %}"></script>
+
+{% endblock content %}

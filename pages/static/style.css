@@ -1,0 +1,111 @@
+/*Estilos da barra de navegação*/
+span.brand-title {
+    font-size: 1.3em;
+}
+
+/*Estilos do título*/
+div.jumbotron h1{
+    font-size: 3.0rem;
+}
+
+/*Estilos dos cartões de produtos*/
+h2.card-header{
+    font-size: 1.75rem;
+}
+
+a.item-white{
+    color: white;
+}
+
+#description:first-letter{
+    text-transform: uppercase;
+}
+
+/*Estilos do formulário*/
+div.invalid-id{
+    display: none;
+    font-size: .875rem;
+    color: #dc3545;
+}
+
+form{
+    max-width: 400px;
+}
+
+.was-validated .form-control:valid ~ .invalid-feedback,
+.was-validated .form-control:valid ~ .invalid-tooltip,
+.form-control.is-valid ~ .invalid-feedback,
+.form-control.is-valid ~ .invalid-tooltip,
+.was-validated .custom-select:valid ~ .invalid-feedback,
+.was-validated .custom-select:valid ~ .invalid-tooltip,
+.custom-select.is-valid ~ .invalid-feedback,
+.custom-select.is-valid ~ .invalid-tooltip {
+    display: none;
+}
+
+/*Estilos dos botões*/
+.btn{
+    background-color: #2980b9;
+    color: white;
+}
+
+a.btn:hover{
+    color: white;
+}
+
+/*Estilos do modal*/
+.modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.t-modal .modal-content{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-width: 0;
+  border-bottom: 3px solid transparent;
+  border-color: #2980b9;
+}
+
+.t-modal .modal-header{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #2980b9;
+}
+
+.t-modal .modal-header{
+  padding: 30px 15px;
+}
+
+.t-modal .modal-title{
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.t-modal .modal-title, .t-modal .close{
+  color: white;
+}
+
+.t-modal .badge{
+    background-color: #2980b9;
+}
+
+.t-modal .badge:hover{
+    color: white;
+}
